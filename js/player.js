@@ -26,7 +26,7 @@ const playlists = [
                 title: "Forgot About Dre",
                 artistName: "Dr. Dre ft. Eminem",
                 fileUrl:
-                    "src/mp3/ForgotAboutDre.mp3",
+                    "./../src/mp3/ForgotAboutDre.mp3",
                 imageUrl: "../src/img/artworks-h38vVbu1Dy1GuBo1-Nngjpw-t1080x1080.jpg",
             },
             {

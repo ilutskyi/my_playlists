@@ -25,14 +25,8 @@ const playlists = [
             {
                 title: "Forgot About Dre",
                 artistName: "Dr. Dre ft. Eminem",
-                fileUrl:
-<<<<<<< HEAD:player.js
-                    "./src/mp3/ForgotAboutDre.mp3",
+                fileUrl: "./src/mp3/ForgotAboutDre.mp3",
                 imageUrl: "./src/img/artworks-h38vVbu1Dy1GuBo1-Nngjpw-t1080x1080.jpg",
-=======
-                    "/my_playlist/src/mp3/ForgotAboutDre.mp3",
-                imageUrl: "../src/img/artworks-h38vVbu1Dy1GuBo1-Nngjpw-t1080x1080.jpg",
->>>>>>> ea381c53ca4080ccdd5190f99162376f531ae0f4:js/player.js
             },
             {
                 title: "It Was a Good Day",

@@ -1,6 +1,4 @@
-
 export default function renderPlayList(playlist) {
-
     renderPlayListHeader(playlist);
 
     const trackListElement = document.createElement("ul");
@@ -13,7 +11,6 @@ export default function renderPlayList(playlist) {
 }
 
 function renderPlayListHeader(playlist) {
-
     const playlistTitleElement = document.createElement("h1");
     playlistTitleElement.append(playlist.title);
     document.body.append(playlistTitleElement);
@@ -26,7 +23,6 @@ function renderPlayListHeader(playlist) {
 }
 
 function createTrackElement(track) {
-
     const trackElement = document.createElement("li");
     trackElement.append(`${track.artistName} - ${track.title}`);
 
@@ -37,9 +33,9 @@ function createTrackElement(track) {
     playerElement.src = track.fileUrl;
     trackElement.append(playerElement);
 
-    const trackLogo = document.createElement('img');
+    const trackLogo = document.createElement("img");
     trackLogo.src = track.imageUrl;
     trackElement.append(trackLogo);
 
-    return trackElement
+    return trackElement;
 }

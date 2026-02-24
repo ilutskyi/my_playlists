@@ -40,18 +40,22 @@ function createTrackListElement(trackList) {
 function createTrackElement(track) {
 
     const trackElement = document.createElement("li");
+    if (track.inTrend) {
+        trackElement.append("🔥")
+    }
     trackElement.append(`${track.artistName} - ${track.title}`);
 
     trackElement.append(document.createElement("br"));
+
+    const trackLogo = document.createElement("img");
+    trackLogo.src = track.imageUrl;
+    trackElement.append(trackLogo);
 
     const playerElement = document.createElement("audio");
     playerElement.controls = true;
     playerElement.src = track.fileUrl;
     trackElement.append(playerElement);
 
-    const trackLogo = document.createElement("img");
-    trackLogo.src = track.imageUrl;
-    trackElement.append(trackLogo);
 
     return trackElement;
 }

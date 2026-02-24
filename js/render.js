@@ -1,28 +1,44 @@
 export default function renderPlayList(playlist) {
-    renderPlayListHeader(playlist);
+    document.body.append(createPlayListHeader(playlist));
+    document.body.append(createTrackListElement(playlist.tracks));
+}
 
+function createPlayListHeader(playlist) {
+    const playlistHeaderElement = document.createElement("div")
+
+    const playlistTitleElement = document.createElement("h1");
+    playlistTitleElement.append(playlist.title);
+    playlistHeaderElement.append(playlistTitleElement);
+
+    const playlistLogoElement = createHeaderLogoElement(playlist.coverImageUrl)
+    playlistHeaderElement.append(playlistLogoElement);
+
+    return playlistHeaderElement
+}
+
+function createHeaderLogoElement(logoImageUrl) {
+    const playlistLogoElement = document.createElement("img");
+
+    playlistLogoElement.src = logoImageUrl;
+    playlistLogoElement.style.width = "100px";
+    playlistLogoElement.style.height = "100px";
+
+    return playlistLogoElement
+}
+
+function createTrackListElement(trackList) {
     const trackListElement = document.createElement("ul");
-    for (let track of playlist.tracks) {
+
+    for (let track of trackList) {
         const trackElement = createTrackElement(track);
         trackListElement.append(trackElement);
     }
 
-    document.body.append(trackListElement);
-}
-
-function renderPlayListHeader(playlist) {
-    const playlistTitleElement = document.createElement("h1");
-    playlistTitleElement.append(playlist.title);
-    document.body.append(playlistTitleElement);
-
-    const playlistLogoElement = document.createElement("img");
-    playlistLogoElement.src = playlist.coverImageUrl;
-    playlistLogoElement.style.width = "100px";
-    playlistLogoElement.style.height = "100px";
-    document.body.append(playlistLogoElement);
+    return trackListElement;
 }
 
 function createTrackElement(track) {
+
     const trackElement = document.createElement("li");
     trackElement.append(`${track.artistName} - ${track.title}`);
 
